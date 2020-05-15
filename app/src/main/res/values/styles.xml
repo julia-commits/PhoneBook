@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextLabel">
+        <item name="colorAccent">@color/textColor</item>  // Text Color
+        <item name="colorControlActivated">@color/colorAccent</item>    //Floating label color
+    </style>
+
 </resources>
