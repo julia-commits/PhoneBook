@@ -7,9 +7,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,10 +41,6 @@ public class MainActivity extends AppCompatActivity {
                         InitializeFragment(contactsFragment);
                         return true;
 
-                    case R.id.add:
-                        InitializeFragment(addNewFragment);
-                        return true;
-
                     case R.id.exit:
                         System.exit(0);
                         return true;
@@ -55,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             navigation.setSelectedItemId(R.id.people);   //setting people fragment as default
         }
+
+
     }
 
     private void InitializeFragment(Fragment fragment) {
@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_container, fragment); //replacing the framelayout with fragment
         fragmentTransaction.commit();   //save changes
     }
+
+
+
 }
 
 

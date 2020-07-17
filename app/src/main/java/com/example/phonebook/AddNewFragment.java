@@ -16,6 +16,7 @@ public class AddNewFragment extends Fragment {
 
 
 
+
     public AddNewFragment() {
         // Required empty public constructor
     }

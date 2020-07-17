@@ -17,7 +17,6 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="79dp"
             android:layout_height="56dp"
             android:layout_marginTop="64dp"
@@ -84,7 +83,6 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editdob"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:hint="@string/dob"
@@ -103,7 +101,6 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:hint="@string/address"
@@ -142,7 +139,6 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editemail"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:hint="@string/email"
@@ -170,7 +166,6 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/lasstname"
                 android:layout_width="274dp"
                 android:layout_height="49dp"
                 android:hint="@string/lname"
@@ -179,7 +174,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/fname"
             android:layout_width="145dp"
             android:layout_height="60dp"
             android:layout_marginBottom="36dp"
@@ -188,7 +182,6 @@
             app:layout_constraintEnd_toStartOf="@+id/lname">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/firstname"
                 android:layout_width="274dp"
                 android:layout_height="49dp"
                 android:hint="@string/fname"

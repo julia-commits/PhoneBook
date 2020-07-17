@@ -12,10 +12,5 @@
         android:icon="@drawable/people"
         android:title="@string/people"/>
 
-    <item
-        android:id="@+id/add"
-        android:icon="@drawable/add2"
-        android:title="@string/add"
-        />
 
 </menu>

@@ -1,13 +1,21 @@
 package com.example.phonebook;
 
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Objects;
 
 
 /**
@@ -15,21 +23,44 @@ import android.view.ViewGroup;
  */
 public class ContactsFragment extends Fragment {
 
+    private AddNewFragment addNewFragment;
+
     public ContactsFragment() {
         // Required empty public constructor
     }
 
+    FloatingActionButton fab;
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_contacts, container,false);
         // Inflate the layout for this fragment
+
+        addNewFragment = new AddNewFragment();
+
+        fab = (FloatingActionButton) view.findViewById(R.id.fab); // to prevent a null pointer exception from being thrown
+        fab.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction transaction=getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container,addNewFragment); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+
+            }
+        });
+
+        return view;
 
         /*hiding app bar for this fragment, not necessary anymore but now we know how to do it lol
         View layout = inflater.inflate(R.layout.fragment_contacts, container, false);
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();*/
 
 
-        return inflater.inflate(R.layout.fragment_contacts, container, false);
+
+
     }
 }
