@@ -318,13 +318,31 @@
                     android:layout_width="15dp"
                     android:layout_height="match_parent" />
 
-                <DatePicker
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/datelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextLabel"
+                    app:layout_constraintBottom_toTopOf="@+id/view5"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select date..."
+                    android:inputType="date"
+                    android:clickable="true"
+                    android:focusable="false"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+               <!--<DatePicker
                     android:id="@+id/datePicker1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:calendarViewShown="false"
-                    android:datePickerMode="spinner" />
+                    android:datePickerMode="spinner" /> -->
 
             </LinearLayout>
 
