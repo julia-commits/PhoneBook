@@ -1,10 +1,16 @@
 <resources>
 
     <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#F4C025</item>
+        <item name="colorPrimaryDark">#B1984F</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
     <style name="TextLabel">
         <item name="colorAccent">@color/textColor</item>  // Text Color
-        <item name="colorControlActivated">@color/colorAccent</item>    //Floating label color
+        <item name="colorControlActivated">@color/light_blue_400</item>    //Floating label color
     </style>
 
 </resources>

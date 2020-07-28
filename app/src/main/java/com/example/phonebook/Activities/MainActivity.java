@@ -1,17 +1,19 @@
-package com.example.phonebook;
+package com.example.phonebook.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.phonebook.Fragments.AddNewFragment;
+import com.example.phonebook.Fragments.ContactsFragment;
+import com.example.phonebook.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +31,18 @@ public class MainActivity extends AppCompatActivity {
         addNewFragment = new AddNewFragment();
 
         FrameLayout frameLayout = findViewById(R.id.fragment_container);
-        BottomNavigationView navigation = findViewById(R.id.bottomNavigationView);
+
+        //setting default fragment on launch
+        if (savedInstanceState == null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.fragment_container, contactsFragment);
+            fragmentTransaction.commit();
+        }
+
+
+
+        /*BottomNavigationView navigation = findViewById(R.id.bottomNavigationView);
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -52,20 +65,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             navigation.setSelectedItemId(R.id.people);   //setting people fragment as default
-        }
+        } */
 
 
     }
-
-    private void InitializeFragment(Fragment fragment) {
-        //bringing in our fragment transactions
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment); //replacing the framelayout with fragment
-        fragmentTransaction.commit();   //save changes
-    }
-
-
-
 }
 
 

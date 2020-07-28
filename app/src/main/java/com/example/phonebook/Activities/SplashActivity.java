@@ -1,4 +1,4 @@
-package com.example.phonebook;
+package com.example.phonebook.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.phonebook.R;
 
 public class SplashActivity extends AppCompatActivity {
     private static int splash_timeout = 8000;

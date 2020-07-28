@@ -1,28 +1,32 @@
-package com.example.phonebook;
+package com.example.phonebook.Fragments;
 
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.phonebook.Adapters.RecyclerAdapter;
+import com.example.phonebook.Fragments.AddNewFragment;
+import com.example.phonebook.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.Objects;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ContactsFragment extends Fragment {
-
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter RecyclerAdapter;
+    private RecyclerView.LayoutManager layoutManager;
     private AddNewFragment addNewFragment;
 
     public ContactsFragment() {
@@ -37,6 +41,7 @@ public class ContactsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_contacts, container,false);
+
         // Inflate the layout for this fragment
 
         addNewFragment = new AddNewFragment();
@@ -52,6 +57,13 @@ public class ContactsFragment extends Fragment {
 
             }
         });
+
+        // lines to create RecyclerView in fragment
+        recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        recyclerView.setAdapter(new RecyclerAdapter());
+
 
         return view;
 

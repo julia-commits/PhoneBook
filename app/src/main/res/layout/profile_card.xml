@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/icon"
+        android:id="@+id/contactImage"
         android:layout_width="51dp"
         android:layout_height="57dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:contentDescription="TODO"
         android:src="@drawable/avatar"
-        app:layout_constraintEnd_toStartOf="@+id/firstLine"
+        app:layout_constraintEnd_toStartOf="@+id/contactNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/secondLine"
+        android:id="@+id/contactName"
         android:layout_width="336dp"
         android:layout_height="36dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_toRightOf="@id/icon"
+        android:layout_toRightOf="@id/contactImage"
         android:ellipsize="marquee"
         android:singleLine="true"
-        android:text="Description"
+        android:text="Name"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/firstLine"
+        android:id="@+id/contactNumber"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignWithParentIfMissing="true"
-        android:layout_above="@id/secondLine"
+        android:layout_above="@id/contactName"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="7dp"
-        android:layout_toRightOf="@id/icon"
+        android:layout_toRightOf="@id/contactImage"
         android:gravity="center_vertical"
-        android:text="Example application"
+        android:text="Phone Number"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/icon"
+        app:layout_constraintBottom_toBottomOf="@+id/contactImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/icon"
-        app:layout_constraintTop_toTopOf="@+id/secondLine" />
+        app:layout_constraintStart_toEndOf="@+id/contactImage"
+        app:layout_constraintTop_toTopOf="@+id/contactName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
