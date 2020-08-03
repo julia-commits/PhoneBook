@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,6 +19,8 @@ import com.example.phonebook.Adapters.RecyclerAdapter;
 import com.example.phonebook.Fragments.AddNewFragment;
 import com.example.phonebook.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Objects;
 
 
 /**
@@ -58,6 +61,7 @@ public class ContactsFragment extends Fragment {
             }
         });
 
+
         // lines to create RecyclerView in fragment
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -65,14 +69,16 @@ public class ContactsFragment extends Fragment {
         recyclerView.setAdapter(new RecyclerAdapter());
 
 
+
+        //hiding app bar for this fragment, not necessary anymore but now we know how to do it lol now we need it
+        View layout = inflater.inflate(R.layout.fragment_contacts, container, false);
+        Objects.requireNonNull(((AppCompatActivity) Objects.requireNonNull(getActivity())).getSupportActionBar()).hide();
+
+
         return view;
 
-        /*hiding app bar for this fragment, not necessary anymore but now we know how to do it lol
-        View layout = inflater.inflate(R.layout.fragment_contacts, container, false);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();*/
+
+           }
 
 
-
-
-    }
 }
