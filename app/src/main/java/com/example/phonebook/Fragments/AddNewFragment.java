@@ -15,6 +15,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -142,7 +143,7 @@ public class AddNewFragment extends Fragment {
 }
 
 
-//saving captured image
+//saving captured image or selected image
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CAMERA && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
@@ -183,7 +184,10 @@ public class AddNewFragment extends Fragment {
                 return true;
 
             case R.id.cancel:
-                Toast.makeText(getContext(), "Cancel button clicked", Toast.LENGTH_SHORT).show();
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, new ContactsFragment());
+                fragmentTransaction.commit();
+
                 return true;
         }
         return super.onOptionsItemSelected(item);
