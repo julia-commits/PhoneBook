@@ -1,5 +1,6 @@
 package com.example.phonebook.Fragments;
 
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -16,10 +17,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.phonebook.Adapters.RecyclerAdapter;
+import com.example.phonebook.DB.Contact;
 import com.example.phonebook.Fragments.AddNewFragment;
 import com.example.phonebook.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 

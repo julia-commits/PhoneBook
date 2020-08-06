@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.phonebook.R;
 
-public class contactsViewHolder extends RecyclerView.ViewHolder {
+public class contactsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private TextView contactName;
     private TextView contactNumber;
     private ImageView contactImage;
+
 
     public contactsViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -21,5 +22,12 @@ public class contactsViewHolder extends RecyclerView.ViewHolder {
         contactNumber = itemView.findViewById(R.id.contactNumber);
         contactImage = itemView.findViewById(R.id.contactImage);
 
+        itemView.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View v) {
+        this.onClick(v);
+    }
+
 }
