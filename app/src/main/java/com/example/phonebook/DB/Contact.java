@@ -5,7 +5,7 @@ import java.sql.Date;
 
 public class Contact {
     private String f_name, l_name, email, address, phone, gender;
-    private Blob profile_pic;
+    private byte[] profile_pic;
     private Date dob;
     private int id;
 
@@ -63,10 +63,10 @@ public class Contact {
         this.gender = gender;
     }
 
-    public Blob getProfile_pic() {
+    public byte[] getProfile_pic() {
         return profile_pic;
     }
-    public void setProfile_pic(Blob profile_pic) {
+    public void setProfile_pic(byte[] profile_pic) {
         this.profile_pic = profile_pic;
     }
 

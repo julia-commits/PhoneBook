@@ -50,7 +50,7 @@ public class SqliteDatabase extends SQLiteOpenHelper {
     }
 
     public ArrayList <Contact> listContacts () {
-        String sql = "select * from" + TABLE_CONTACTS;
+        String sql = "SELECT * FROM " + TABLE_CONTACTS;
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList <Contact> storeContacts = new ArrayList<>();
         Cursor cursor = db.rawQuery(sql,null);

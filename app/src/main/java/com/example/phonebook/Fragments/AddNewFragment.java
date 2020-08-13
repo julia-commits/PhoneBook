@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,7 +34,9 @@ import android.widget.Toast;
 import com.example.phonebook.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Objects;
 
@@ -158,6 +161,16 @@ public class AddNewFragment extends Fragment {
             }
 
         }
+
+
+    }
+
+    public static byte[] imageViewToByte(ImageView image) {
+        Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        return byteArray;
     }
 
 
@@ -181,6 +194,7 @@ public class AddNewFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.save:
                 Toast.makeText(getContext(),"Save button clicked", Toast.LENGTH_SHORT).show();
+                System.out.println("LESSSS GEEEEEEEEEEEEEEEA"+ Arrays.toString(imageViewToByte(profile)));
                 return true;
 
             case R.id.cancel:
