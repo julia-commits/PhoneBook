@@ -1,6 +1,7 @@
 package com.example.phonebook.Adapters;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +17,18 @@ import java.util.ArrayList;
 
 
 public class RecyclerAdapter extends RecyclerView.Adapter {
-    Context c;
-    ArrayList <Contact> contacts;
+    private Context context;
+    private ArrayList <Contact> listContacts;
+    private ArrayList<Contact> mArrayList;
 
-    public RecyclerAdapter() {
+    private SQLiteDatabase mDatabase;
+
+    public RecyclerAdapter(Context context, ArrayList<Contact>listContacts) {
         //assigning them locally
-        this.c = c;
-        this.contacts = contacts;
+        this.context = context;
+        this.listContacts = listContacts;
+        this.mArrayList = mArrayList;
+        this.mDatabase = mDatabase;
     }
 
     @NonNull
@@ -36,7 +42,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
+        Contact contact = listContacts.get(position);
+        holder.contactName.setText(contact.getF_name());
+        holder.contactNumber.setText(contact.getPhone());
+        holder.contactImage.setImage(contact.getProfile_pic());
     }
 
     @Override
